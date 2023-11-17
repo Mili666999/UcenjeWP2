@@ -1,3 +1,4 @@
+
 use master;
 go
 drop database if exists djelatnici;
@@ -29,3 +30,7 @@ kontakt varchar(150) not null,
 oib char(11) not null,
 iban varchar(50) not null
 );
+
+
+alter table fotografije add foreign key (djelatnik) references djelatnici(id);
+alter table dokumenti add foreign key (djelatnik) references djelatnici(id);
