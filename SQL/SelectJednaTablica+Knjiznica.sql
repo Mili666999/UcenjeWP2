@@ -105,13 +105,16 @@ drop table nova;
 --- BAZA knjiznica
 
 -- izlistajte imena i prezimena autora
+select ime, prezime from autor;
 
 
 -- koliko ima redova u tablici autor
+select COUNT(*) from autor;
 
 
 -- izlistajte sve autore koji su rođeni u 
 -- Vašoj godini rođenja
+select * from autor where datumrodenja between '1983-01-01' and '1983-12-31';
 
 
 -- unesite sebe kao autora
@@ -122,6 +125,7 @@ values(69,'Antonio','Miloloža','1983-06-11');
 -- Mladića je ostavila djevojka i on pati
 -- Moli pomoć knjižničarke koje knjige da 
 -- posudi kako bi ju prebolio
+select * from katalog where naslov like '%ljubav%' or naslov like '%bol%';
 
 
 -- izlistajte sve neaktivne izdavače
@@ -146,3 +150,5 @@ select * from autor where ime like '%a';
 select distinct ime from autor where ime like '%a';
 
 
+--datum servera
+select GETDATE();
