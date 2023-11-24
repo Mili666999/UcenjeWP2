@@ -150,5 +150,5 @@ select * from autor where ime like '%a';
 select distinct ime from autor where ime like '%a';
 
 
---datum servera
+--datum i vrijeme servera
 select GETDATE();
