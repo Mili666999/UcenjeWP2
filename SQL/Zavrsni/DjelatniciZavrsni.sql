@@ -99,7 +99,7 @@ INSERT INTO dokumenti (naziv, datum, djelatnik) VALUES
 ('LukaNovakUgovor', '2023-06-06', 6),
 ('LukaNovakZivotopis', '2023-06-06', 6),
 ('MarkoVukovicUgovor', '2023-07-07', 7),
-('MarkoVukovicZivotopis', '202-07-07', 7),
+('MarkoVukovicZivotopis', '2023-07-07', 7),
 ('MateoTomicUgovor', '2023-08-08', 8),
 ('MateoTomicZivotopis', '2023-08-08', 8),
 ('MiaJuricUgovor', '2023-09-09', 9),
