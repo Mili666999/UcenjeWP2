@@ -84,3 +84,55 @@ alter table brat add foreign key (prijatelj) references prijatelj (sifra);
 alter table prijatelj_ostavljena add foreign key (prijatelj) references prijatelj (sifra);
 alter table prijatelj_ostavljena add foreign key (ostavljena) references ostavljena (sifra);
 alter table svekrva add foreign key (punac) references punac (sifra);
+
+
+--1.)
+insert into prijatelj(prstena, stilfrizura) values
+(3,'Jež');
+
+insert into ostavljena(prviputa, kratkamajica) values
+('2023-06-11 12:34:56', 'Crvena');
+
+insert into prijatelj_ostavljena(prijatelj, ostavljena) values
+(1,1),
+(1,1),
+(1,1);
+
+insert into brat(nausnica, treciputa, narukvica) values
+(2, '2022-12-21 12:34:56', 3),
+(3, '2022-12-21 12:34:56', 4),
+(4, '2022-12-21 12:34:56', 5);
+
+insert into zena(novcica, narukvica, dukserica, brat) values
+(12.34, 5, 'Crvena', 1),
+(34.56, 4, 'Bijela', 2),
+(56.78, 6, 'Plava', 3);
+
+
+--2.)
+update svekrva set suknja = 'Osijek';
+
+
+--3.)
+delete from decko where modelnaocala < 'AB';
+
+
+--4.)
+select narukvica from brat where treciputa = null;
+
+
+--5.)
+select o.drugiputa as 'Drugiputa_ostavljena',
+       z.narukvica as 'Narukvica_zena'
+from ostavljena o
+JOIN brat b on o.sifra = b.treciputa
+JOIN prijatelj p on b.prijatelj = p.sifra
+JOIN zena z on z.sifra = b.nausnica
+where b.treciputa IS NOT NULL
+  AND p.prstena = 219
+order by z.narukvica desc;
+
+
+--6.)
+select prstena, introvertno from prijatelj
+where not exists (select * from prijatelj_ostavljena where prijatelj.sifra = prijatelj_ostavljena.prijatelj );
