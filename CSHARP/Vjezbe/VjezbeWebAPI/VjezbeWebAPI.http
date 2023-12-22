@@ -1,0 +1,6 @@
+@VjezbeWebAPI_HostAddress = http://localhost:5299
+
+GET {{VjezbeWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
