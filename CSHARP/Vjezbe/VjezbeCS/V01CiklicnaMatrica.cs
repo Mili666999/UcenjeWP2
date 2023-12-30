@@ -10,110 +10,103 @@
             Console.Write("Unesi broj stupaca: ");
             int stup = int.Parse(Console.ReadLine());
 
+            int a = 0;
             int b = 1;
+            int c = 2;
+            int d = 3;
+            int x = 1;
+            int i = 0;
             
             int[,] Matrica = new int[red,stup];
+           
 
-
-            //Matrica[red-1,stup-1] = 1;
-            
-            //for(int i = 0; i < red ; i++) 
-            //{
-            //    for (int j = 0; j < stup; j++)
-            //    {
-            //        Console.Write((Matrica[i,j]) + "\t");
-            //    }
-            //    Console.WriteLine();
-            //}
-            //Console.WriteLine("*****************************************************************");
-            //Matrica[red - 1, stup - 2] = 2;
-
-            //for (int i = 0; i < red; i++)
-            //{
-            //    for (int j = 0; j < stup; j++)
-            //    {
-            //        Console.Write(Matrica[i, j] + "\t");
-            //    }
-            //    Console.WriteLine();
-            //}
-            Console.WriteLine("*****************************************************************");
-            //Matrica[red - 1, stup - 1] = 1;
-            //Matrica[red - 1, stup - 2] = 2;
-            //Matrica[red - 1, stup - 3] = 3;
-            //Matrica[red - 1, stup - 4] = 4;
-            //Matrica[red - 1, stup - 5] = 5;
-
-            for (int i = 1; i <= stup; i++)
+            //Prvi krug
+            for (i=1; i<=stup; i++)
             {
-                Matrica[red - 1, stup - i] = b++;
+                Matrica[red-1, stup-i] = x++;
+            }
+            for (i=2; i<=red; i++)
+            {
+                Matrica[red-i, 0] = x++;
+            }
+            for (i=1; i<stup; i++)
+            {
+                if (red <= 1)
+                {
+                    break;
+                }
+                Matrica[0, i] = x++;
+            }
+            for (i=1; i<red-1; i++)
+            {
+                Matrica[i, stup-1] = x++;
             }
 
-            for (int i = 0; i < red; i++)
+
+
+            //Ostali krugovi
+            int y = 1;
+            for (y = 1; y < red && y < stup; y++)
+            {
+                if (red * stup == x + 1)
+                {
+                    break;
+                }
+                y++;
+
+
+                for (i = c; i < stup - a; i++)
+                {
+                    if (red == 2 || stup == 2 || red * stup == x - 1)
+                    {
+                        break;
+                    }
+                    Matrica[red - c, stup - i] = x++;
+                }
+
+                for (i = d; i < red - a; i++)
+                {
+                    if (red == 2 || stup == 2 || red * stup == x - 1)
+                    {
+                        break;
+                    }
+                    Matrica[red - i, b] = x++;
+                }
+
+                for (i = c; i < stup - b; i++)
+                {
+                    if (red == 2 || stup == 2 || red * stup == x - 1)
+                    {
+                        break;
+                    }
+                    Matrica[b,i] = x++;
+                }
+
+                for (i = c; i < red - c; i++)
+                {
+                    if (red == 2 || stup == 2 || red * stup == x - 1)
+                    {
+                        break;
+                    }
+                    Matrica[i,stup - c] = x++;
+                }
+                a++;
+                b++;
+                c++;
+                d++;
+            }
+
+
+            //Ispis matrice
+            Console.WriteLine();
+            for (i = 0; i < red; i++)
             {
                 for (int j = 0; j < stup; j++)
                 {
                     Console.Write(Matrica[i, j] + "\t");
                 }
                 Console.WriteLine();
-            }
-            Console.WriteLine("*****************************************************************");
-            //Matrica[red - 2, 0] = b++;
-            //Matrica[red - 3, 0] = b++;
-            //Matrica[red - 4, 0] = b++;
-            //Matrica[red - 5, 0] = b++;
-
-            for (int i = 2; i <= red; i++)
-            {
-                Matrica[red-i, 0] = b++;
-            }
-
-            for (int i=0; i<red; i++)
-            {
-                for (int j=0; j<stup; j++)
-                {
-                    Console.Write(Matrica[i, j] + "\t");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine("*****************************************************************");
-            //Matrica[0, 1] = b++;
-            //Matrica[0, 2] = b++;
-            //Matrica[0, 3] = b++;
-            //Matrica[0, 4] = b++;
-
-            for (int i = 1; i < stup; i++)
-            {
-                Matrica[0,i] = b++;
-            }
-
-            for (int i=0; i < red; i++)
-            {
-                for (int j = 0; j < stup; j++)
-                {
-                    Console.Write(Matrica[i, j] + "\t");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine("*****************************************************************");
-            //Matrica[1,stup-1] = b++;
-            //Matrica[2,stup-1] = b++;
-            //Matrica[3,stup-1] = b++;
-
-            for (int i = 1; i < red-1; i++)
-            {
-                Matrica[i, stup-1] = b++;
-            }
-
-            for (int i = 0; i < red; i++)
-            {
-                for (int j = 0; j < stup; j++)
-                {
-                    Console.Write(Matrica[i, j] + "\t");
-                }
-                Console.WriteLine();
-            }
-
-
+            }          
         }
     }
 }
