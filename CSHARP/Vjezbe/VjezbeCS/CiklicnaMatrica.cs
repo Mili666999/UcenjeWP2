@@ -1,6 +1,6 @@
 ﻿namespace VjezbeCS
 {
-    internal class V01CiklicnaMatrica
+    internal class CiklicnaMatrica
     {
         public static void Izvedi()
         {

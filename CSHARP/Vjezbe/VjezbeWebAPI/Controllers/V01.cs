@@ -29,5 +29,13 @@ namespace VjezbeWebAPI.Controllers
             }
             return 0;
         }
+
+        [HttpGet]
+        [Route("Vjezba2")]
+
+        public float Vjz2(float A, float B) 
+        {
+            return 0;
+        }
     }
 }
