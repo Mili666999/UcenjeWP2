@@ -25,12 +25,15 @@ namespace VjezbeWebAPI.Controllers
 
         public int[] Zad2() 
         {
-            int[] Niz = new int[57];
+            int[] Niz = new int[28];
+
+            int Index = 0;
+            
             for (int i = 1; i <= 57; i++)
             {
                 if (i % 2 == 0)
                 {
-                    Niz[i] += i;
+                    Niz[Index++] = i;
                 }
             }
 
