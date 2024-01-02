@@ -8,6 +8,7 @@ namespace VjezbeCS
 {
     internal class V01ZimskoVjezbanje
     {
+        //Prvi zadatak
         public static void Ispis1Do100()
         { 
             for (int i = 0; i < 100;  i++) 
@@ -16,6 +17,8 @@ namespace VjezbeCS
             }
         }
 
+        
+        //Drugi zadatak
         public static void Ispis100Do1()
         {
             for (int i = 100; i >= 1; i--)
@@ -24,6 +27,8 @@ namespace VjezbeCS
             }
         }
 
+        
+        //Treći zadatak
         public static void Ispis1Do100DjeljiviSa7() 
         {
             for(int i = 1; i < 100; i++) 
@@ -35,6 +40,8 @@ namespace VjezbeCS
             }
         }
 
+        
+        //Četvrti zadatak
         public static void VeciOd100()
         {
             int i = 0;
