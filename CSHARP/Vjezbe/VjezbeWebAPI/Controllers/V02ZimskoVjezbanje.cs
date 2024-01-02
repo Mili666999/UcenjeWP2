@@ -20,6 +20,8 @@ namespace VjezbeWebAPI.Controllers
             return Zbroj;
         }
 
+        
+        
         [HttpGet]
         [Route("Zadatak2")]
 
@@ -38,6 +40,38 @@ namespace VjezbeWebAPI.Controllers
             }
 
             return Niz;
+        }
+
+
+        [HttpGet]
+        [Route("Zadatak3")]
+
+        public int Zad3()
+        {
+            int Zbroj = 0;
+            for (int i = 2; i <= 18; i++)
+            {
+                if ((i % 2) == 0)
+                {
+                    Zbroj += i;
+                }
+                
+            }
+            return Zbroj;
+        }
+
+
+        [HttpGet]
+        [Route("Zadatak4")]
+
+        public int Zad4(int x)
+        {
+            int Zbroj = 0;
+            for (int i = 1; i <= x; i++)
+            {
+                Zbroj+=i;
+            }
+            return Zbroj;
         }
     }
 }
