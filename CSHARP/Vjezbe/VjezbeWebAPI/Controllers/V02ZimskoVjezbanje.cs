@@ -22,7 +22,6 @@ namespace VjezbeWebAPI.Controllers
         }
 
         
-        
         [HttpGet]
         [Route("Zadatak2")]
 
