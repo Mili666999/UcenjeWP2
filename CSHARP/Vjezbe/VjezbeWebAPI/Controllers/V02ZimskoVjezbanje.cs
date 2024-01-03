@@ -140,5 +140,37 @@ namespace VjezbeWebAPI.Controllers
             }
             return Niz;
         }
+
+
+        [HttpGet]
+        [Route("Zadatak7")]
+
+        //Ruta prima dva parametra koji su cijeli brojevi i vraća zbroj svih brojeva između primljenih brojeva
+        public int Zad7(int x, int y) 
+        {
+            int Zbroj = 0;
+            int Manji = 0;
+            int Veci = 0;
+
+            if (x < y)
+            {
+                Manji = x;
+                Veci = y;
+            }
+            else
+            {
+                Manji = y;
+                Veci = x;
+            }
+
+            for (int i = Manji; i <= Veci; i++)
+            {
+                Zbroj += i;
+            }
+
+            return Zbroj;
+        }
+
+
     }
 }
