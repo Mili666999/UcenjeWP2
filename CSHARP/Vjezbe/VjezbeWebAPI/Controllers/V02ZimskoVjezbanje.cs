@@ -18,6 +18,7 @@ namespace VjezbeWebAPI.Controllers
             {
                 Zbroj += i;
             }
+            
             return Zbroj;
         }
 
@@ -59,6 +60,7 @@ namespace VjezbeWebAPI.Controllers
                 }
                 
             }
+            
             return Zbroj;
         }
 
@@ -74,6 +76,7 @@ namespace VjezbeWebAPI.Controllers
             {
                 Zbroj+=i;
             }
+            
             return Zbroj;
         }
 
@@ -106,6 +109,7 @@ namespace VjezbeWebAPI.Controllers
                 if(i % 2 == 0)
                 { Niz[Index++] = i; }
             }
+            
             return Niz;
         }
 
@@ -138,6 +142,7 @@ namespace VjezbeWebAPI.Controllers
                 if (i % 2 != 0)
                 { Niz[Index++] = i; }
             }
+            
             return Niz;
         }
 
@@ -167,7 +172,7 @@ namespace VjezbeWebAPI.Controllers
             {
                 Zbroj += i;
             }
-
+            
             return Zbroj;
         }
 
