@@ -107,7 +107,9 @@ namespace VjezbeWebAPI.Controllers
             for (int i = Manji; i <= Veci; i++)
             {
                 if(i % 2 == 0)
-                { Niz[Index++] = i; }
+                {
+                    Niz[Index++] = i; 
+                }
             }
             
             return Niz;
@@ -140,7 +142,9 @@ namespace VjezbeWebAPI.Controllers
             for (int i = Manji; i <= Veci; i++)
             {
                 if (i % 2 != 0)
-                { Niz[Index++] = i; }
+                { 
+                    Niz[Index++] = i; 
+                }
             }
             
             return Niz;
@@ -177,5 +181,37 @@ namespace VjezbeWebAPI.Controllers
         }
 
 
+        [HttpGet]
+        [Route("Zadatak8")]
+
+        //Ruta prima dva parametra koji su cijeli brojevi i vraća zbroj svih brojeva između primljenih brojeva koji su cjelobrojno djeljivi s 3
+        public int Zad8(int x, int y) 
+        {
+            int Zbroj = 0;
+            int Manji = 0;
+            int Veci = 0;
+
+            if (x < y)
+            {
+                Manji = x;
+                Veci = y;
+            }
+            else
+            {
+                Manji = y;
+                Veci = x;
+            }
+
+            for (int i = Manji; i <= Veci; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    Zbroj += i;
+                }
+                
+            }
+
+            return Zbroj;
+        }
     }
 }
