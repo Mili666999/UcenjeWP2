@@ -58,7 +58,6 @@ namespace VjezbeWebAPI.Controllers
                 {
                     Zbroj += i;
                 }
-                
             }
             
             return Zbroj;
@@ -208,10 +207,65 @@ namespace VjezbeWebAPI.Controllers
                 {
                     Zbroj += i;
                 }
-                
             }
 
             return Zbroj;
+        }
+
+
+        [HttpGet]
+        [Route("Zadatak9")]
+
+        //Ruta prima dva parametra koji su cijeli brojevi i vraća zbroj svih brojeva između primljenih brojeva koji su cjelobrojno djeljivi s 3 i 5
+        public int Zad9(int x, int y) 
+        {
+            int Zbroj = 0;
+            int Manji = 0;
+            int Veci = 0;
+
+            if (x < y)
+            {
+                Manji = x;
+                Veci = y;
+            }
+            else
+            {
+                Manji = y;
+                Veci = x;
+            }
+
+            for (int i = Manji; i <= Veci; i++)
+            {
+                if (i % 3 == 0 || i % 5 == 0)
+                {
+                    Zbroj += i;
+                }
+            }
+
+            return Zbroj;
+        }
+
+
+        [HttpGet]
+        [Route("Zadatak10")]
+
+        //Ruta prima dva parametra koji su cijeli brojevi i vraća dvodimenzionalni niz (matricu) koja sadrži tablicu množenja za dva primljena broja
+
+        public IActionResult Zad10(int x, int y) 
+        {
+            List<List<int>> Matrica = new List<List<int>>();
+
+            for (int i = 1; i <= x; i++)
+            {
+                List<int> red = new List<int>();
+                for (int j = 1; j <= y; j++)
+                {
+                    red.Add(i * j);
+                }
+                Matrica.Add(red);
+            }
+
+            return Ok(Matrica);
         }
     }
 }
