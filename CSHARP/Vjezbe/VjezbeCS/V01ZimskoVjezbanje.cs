@@ -60,5 +60,26 @@ namespace VjezbeCS
             }
             Console.WriteLine("Unjeli ste broj iz " + j + " pokušaja!");
         }
+
+
+        //Tablica množenja
+        public static void TablicaMnozenja()
+        {
+            Console.Write("Unesi prvi broj: ");
+            int x = int.Parse(Console.ReadLine()) ;
+            Console.Write("Unesi drugi broj: ");
+            int y= int.Parse(Console.ReadLine()) ;
+
+            int[,] Tablica = new int[x, y];
+
+            for (int i = 1; i <= x; i++)
+            {
+                for (int j = 1; j <= y; j++)
+                {
+                    Console.Write((Tablica[i-1, j-1] = i * j) + "\t");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
