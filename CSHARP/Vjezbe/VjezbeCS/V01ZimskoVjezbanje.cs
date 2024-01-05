@@ -8,17 +8,17 @@ namespace VjezbeCS
 {
     internal class V01ZimskoVjezbanje
     {
-        //Prvi zadatak
+        //Napisati program koji ispisuje sve brojeve od 1 do 100
         public static void Ispis1Do100()
         { 
-            for (int i = 0; i < 100;  i++) 
+            for (int i = 1; i <= 100;  i++) 
             {
                 Console.WriteLine(i);
             }
         }
 
-        
-        //Drugi zadatak
+
+        //Napisati program koji ispisuje sve brojeve od 100 do 1
         public static void Ispis100Do1()
         {
             for (int i = 100; i >= 1; i--)
@@ -27,8 +27,8 @@ namespace VjezbeCS
             }
         }
 
-        
-        //Treći zadatak
+
+        //Napisati program koji ispisuje sve brojeve od 1 do 100 koji su cjelobrojno djeljivi s 7
         public static void Ispis1Do100DjeljiviSa7() 
         {
             for(int i = 1; i < 100; i++) 
@@ -40,12 +40,12 @@ namespace VjezbeCS
             }
         }
 
-        
-        //Četvrti zadatak
+
+        //Napisati program koji unosi brojeve sve dok ne unese broj veći od 100, a zatim ispisuje koliko je bilo pokušaja unosa
         public static void VeciOd100()
         {
             int i = 0;
-            int j = 0;
+            int j = 1;
 
             Console.WriteLine("Pokušaj unjeti broj veći od 100");
 
