@@ -247,25 +247,75 @@ namespace VjezbeWebAPI.Controllers
 
 
         [HttpGet]
-        [Route("Zadatak10")]
+        [Route("Zadatak10 - NEDOVRŠEN")]
 
         //Ruta prima dva parametra koji su cijeli brojevi i vraća dvodimenzionalni niz (matricu) koja sadrži tablicu množenja za dva primljena broja
 
-        public IActionResult Zad10(int x, int y) 
+        public int[] Zad10(int x, int y) 
         {
-            List<List<int>> Matrica = new List<List<int>>();
+            int z = 0;
+            int[] Niz = new int[x];
 
             for (int i = 1; i <= x; i++)
             {
-                List<int> red = new List<int>();
                 for (int j = 1; j <= y; j++)
                 {
-                    red.Add(i * j);
+                    int Index = z++;
+                    Niz[Index] = i * j;
                 }
-                Matrica.Add(red);
             }
 
-            return Ok(Matrica);
+            return Niz;
+        }
+
+
+        [HttpGet]
+        [Route("Zadatak11")]
+
+        //Ruta prima jedan parametar koji je cijeli broj i vraća niz cijelih brojeva koji su složeni od primljenog broja do broja 1
+
+        public int[] Zad11(int x)
+        {
+            int Brojac = 0;
+            int[] Niz = new int[x];
+
+            for (int i = x; i >= 1; i--)
+            {
+                Niz[Brojac++] = i;
+            }
+
+            return Niz;
+        }
+
+
+        [HttpGet]
+        [Route("Zadatak12")]
+
+        //Ruta prima cijeli broj i vraća logičku istinu ako je primljeni broj prosti (prim - prime) broj, odnosno logičku laž ako nije
+
+        public bool Zad12(int x) 
+        {
+            int Brojac = 0;
+            bool Prime = false;
+
+            for (int i = 1; i < int.MaxValue; i++)
+            {
+                if (x % i == 0)
+                { 
+                    Brojac++;
+                }
+            }
+
+            if (Brojac == 2)
+            {
+                Prime = true;
+            }
+            else
+            { 
+                Prime = false;
+            }
+
+            return Prime;
         }
     }
 }
