@@ -298,7 +298,7 @@ namespace VjezbeWebAPI.Controllers
             int Brojac = 0;
             bool Prime = false;
 
-            for (int i = 1; i < int.MaxValue; i++)
+            for (int i = 1; i <= x; i++)
             {
                 if (x % i == 0)
                 { 
