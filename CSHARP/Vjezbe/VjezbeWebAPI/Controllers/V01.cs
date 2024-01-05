@@ -8,9 +8,10 @@ namespace VjezbeWebAPI.Controllers
     public class V01 : ControllerBase
     {
         [HttpGet]
-        [Route("Vjezba1")]
+        [Route("Zadatak1")]
 
-        public float Vjz1(int A, int B, string Operator)
+        //Ruta prima tri parametra: dva cijela broja i string. String može biti + - * i /. Ruta vraća rezultat
+        public float Zad1(int A, int B, string Operator)
         {
             switch (Operator)
             {
@@ -31,9 +32,10 @@ namespace VjezbeWebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("Vjezba2")]
+        [Route("Zadatak2 - NEDOVRŠEN")]
 
-        public float Vjz2(float A, float B) 
+        //Ruta prima niz decimalnih brojeva. Vraća zbroj cijelog dijela prvog elementa niza i decimalnog dijela zadnjeg elementa niza
+        public float Zad2(float A, float B) 
         {
             return 0;
         }
