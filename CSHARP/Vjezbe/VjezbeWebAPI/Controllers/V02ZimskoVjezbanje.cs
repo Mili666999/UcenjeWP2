@@ -223,16 +223,7 @@ namespace VjezbeWebAPI.Controllers
             int Manji = 0;
             int Veci = 0;
 
-            if (x < y)
-            {
-                Manji = x;
-                Veci = y;
-            }
-            else
-            {
-                Manji = y;
-                Veci = x;
-            }
+            Manji = (x < y ? Manji = x : Veci = x) ;
 
             for (int i = Manji; i <= Veci; i++)
             {
@@ -298,6 +289,11 @@ namespace VjezbeWebAPI.Controllers
             int Brojac = 0;
             bool Prime = false;
 
+            if (x < 0)
+            { 
+                x = -x;
+            }
+
             for (int i = 1; i <= x; i++)
             {
                 if (x % i == 0)
@@ -306,16 +302,7 @@ namespace VjezbeWebAPI.Controllers
                 }
             }
 
-            if (Brojac == 2)
-            {
-                Prime = true;
-            }
-            else
-            { 
-                Prime = false;
-            }
-
-            return Prime;
+            return (Brojac==2 ? Prime = true : Prime = false);
         }
     }
 }
