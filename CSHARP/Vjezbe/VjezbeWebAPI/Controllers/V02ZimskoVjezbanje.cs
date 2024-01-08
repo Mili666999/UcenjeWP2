@@ -265,7 +265,7 @@ namespace VjezbeWebAPI.Controllers
                 }
             }
 
-            return SB.ToString;
+            return "";
         }
 
 
@@ -297,6 +297,11 @@ namespace VjezbeWebAPI.Controllers
         {
             int Brojac = 0;
 
+            if (x == 1 || x == -1)
+            { 
+                return true;
+            }
+
             if (x < 0)
             { 
                 x = -x;
@@ -310,7 +315,7 @@ namespace VjezbeWebAPI.Controllers
                 }
             }
 
-            return (Brojac==2 ? true : false);
+            return (Brojac == 2 ? true : false);
         }
     }
 }
