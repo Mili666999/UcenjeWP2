@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections;
+using System.Text;
 
 namespace VjezbeWebAPI.Controllers
 {
@@ -251,21 +252,20 @@ namespace VjezbeWebAPI.Controllers
 
         //Ruta prima dva parametra koji su cijeli brojevi i vraća dvodimenzionalni niz (matricu) koja sadrži tablicu množenja za dva primljena broja
 
-        public int[] Zad10(int x, int y) 
+        public String Zad10(int x, int y) 
         {
-            int Brojac = 1;
-            int[] Niz = new int[10];
+            StringBuilder SB = new StringBuilder();
 
             for (int i = 1; i <= x; i++)
             {
                 for (int j = 1; j <= y; j++)
                 {
-                    Brojac++;
-                    Niz[Brojac] = i*j;
+                    int Umnozak = i * j;
+                    SB.Append(Umnozak);
                 }
             }
 
-            return Niz;
+            return SB.ToString;
         }
 
 
@@ -296,7 +296,6 @@ namespace VjezbeWebAPI.Controllers
         public bool Zad12(int x) 
         {
             int Brojac = 0;
-            //bool Prime = false;
 
             if (x < 0)
             { 
