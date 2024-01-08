@@ -253,15 +253,15 @@ namespace VjezbeWebAPI.Controllers
 
         public int[] Zad10(int x, int y) 
         {
-            int z = 0;
-            int[] Niz = new int[x];
+            int Brojac = 1;
+            int[] Niz = new int[10];
 
             for (int i = 1; i <= x; i++)
             {
                 for (int j = 1; j <= y; j++)
                 {
-                    int Index = z++;
-                    Niz[Index] = i * j;
+                    Brojac++;
+                    Niz[Brojac] = i*j;
                 }
             }
 
@@ -296,7 +296,7 @@ namespace VjezbeWebAPI.Controllers
         public bool Zad12(int x) 
         {
             int Brojac = 0;
-            bool Prime = false;
+            //bool Prime = false;
 
             if (x < 0)
             { 
@@ -311,7 +311,7 @@ namespace VjezbeWebAPI.Controllers
                 }
             }
 
-            return (Brojac==2 ? Prime = true : Prime = false);
+            return (Brojac==2 ? true : false);
         }
     }
 }
