@@ -223,7 +223,16 @@ namespace VjezbeWebAPI.Controllers
             int Manji = 0;
             int Veci = 0;
 
-            Manji = (x < y ? Manji = x : Veci = x) ;
+            if (x < y)
+            {
+                Manji = x;
+                Veci = y;
+            }
+            else
+            {
+                Manji = y;
+                Veci = x;
+            }
 
             for (int i = Manji; i <= Veci; i++)
             {
