@@ -35,7 +35,7 @@ namespace VjezbeWebAPI.Controllers
         [Route("Zadatak2 - NEDOVRŠEN")]
 
         //Ruta prima niz decimalnih brojeva. Vraća zbroj cijelog dijela prvog elementa niza i decimalnog dijela zadnjeg elementa niza
-        public float Zad2(float A, float B) 
+        public float Zad2(float[] Niz)
         {
             return 0;
         }
