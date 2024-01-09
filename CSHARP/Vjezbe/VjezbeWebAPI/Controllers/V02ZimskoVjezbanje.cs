@@ -248,24 +248,26 @@ namespace VjezbeWebAPI.Controllers
 
 
         [HttpGet]
-        [Route("Zadatak10 - NEDOVRŠEN")]
+        [Route("Zadatak10")]
 
         //Ruta prima dva parametra koji su cijeli brojevi i vraća dvodimenzionalni niz (matricu) koja sadrži tablicu množenja za dva primljena broja
 
         public String Zad10(int x, int y) 
         {
+            int[,] Tablica = new int[x,y];
             StringBuilder SB = new StringBuilder();
 
             for (int i = 1; i <= x; i++)
             {
                 for (int j = 1; j <= y; j++)
                 {
-                    int Umnozak = i * j;
-                    SB.Append(Umnozak);
+                    Tablica[i-1,j-1] = i*j;
+                    SB.Append(Tablica[i-1,j-1] + "\t");
                 }
+                SB.AppendLine();
             }
 
-            return "";
+            return SB.ToString();
         }
 
 
