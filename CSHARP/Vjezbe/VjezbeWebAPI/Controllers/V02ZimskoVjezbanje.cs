@@ -319,5 +319,113 @@ namespace VjezbeWebAPI.Controllers
 
             return (Brojac == 2 ? true : false);
         }
+
+
+        [HttpGet]
+        [Route("Zadatak13")]
+
+        //Ruta prima dva parametra koji su cijeli brojevi te vraća dvodimenzionalni niz (matricu) cijelih brojeva koji su složeni prema slici zadatka: Ciklična matrica
+
+        public String Zad13(int red, int stup) 
+        {
+            int a = 0;
+            int b = 1;
+            int c = 2;
+            int d = 3;
+            int x = 1;
+            int i = 0;
+
+            int[,] Matrica = new int[red, stup];
+            StringBuilder SB = new StringBuilder();
+
+
+            //Prvi krug
+            for (i = 1; i <= stup; i++)
+            {
+                Matrica[red - 1, stup - i] = x++;
+            }
+            for (i = 2; i <= red; i++)
+            {
+                Matrica[red - i, 0] = x++;
+            }
+            for (i = 1; i < stup; i++)
+            {
+                if (red <= 1)
+                {
+                    break;
+                }
+                Matrica[0, i] = x++;
+            }
+            for (i = 1; i < red - 1; i++)
+            {
+                Matrica[i, stup - 1] = x++;
+            }
+
+
+            //Ostali krugovi
+            int y = 1;
+            for (y = 1; y < red && y < stup; y++)
+            {
+                if (red * stup == x + 1)
+                {
+                    break;
+                }
+                y++;
+
+
+                for (i = c; i < stup - a; i++)
+                {
+                    if (red == 2 || stup == 2 || red * stup == x - 1)
+                    {
+                        break;
+                    }
+                    Matrica[red - c, stup - i] = x++;
+                }
+
+                for (i = d; i < red - a; i++)
+                {
+                    if (red == 2 || stup == 2 || red * stup == x - 1)
+                    {
+                        break;
+                    }
+                    Matrica[red - i, b] = x++;
+                }
+
+                for (i = c; i < stup - b; i++)
+                {
+                    if (red == 2 || stup == 2 || red * stup == x - 1)
+                    {
+                        break;
+                    }
+                    Matrica[b, i] = x++;
+                }
+
+                for (i = c; i < red - c; i++)
+                {
+                    if (red == 2 || stup == 2 || red * stup == x - 1)
+                    {
+                        break;
+                    }
+                    Matrica[i, stup - c] = x++;
+                }
+                a++;
+                b++;
+                c++;
+                d++;
+            }
+
+
+            //Ispis matrice
+            for (i = 0; i < red; i++)
+            {
+                for (int j = 0; j < stup; j++)
+                {
+                    SB.Append(Matrica[i, j] + "\t");
+                }
+                SB.AppendLine();
+            }
+
+            return SB.ToString();
+        }
     }
 }
