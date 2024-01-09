@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections;
+using System.ComponentModel.DataAnnotations;
 
 namespace VjezbeWebAPI.Controllers
 {
@@ -28,16 +29,29 @@ namespace VjezbeWebAPI.Controllers
                     return (float)A / B;
                     break;
             }
+            
             return 0;
         }
 
         [HttpPost]
-        [Route("Zadatak2 - NEDOVRŠEN")]
+        [Route("Zadatak2")]
 
         //Ruta prima niz decimalnih brojeva. Vraća zbroj cijelog dijela prvog elementa niza i decimalnog dijela zadnjeg elementa niza
         public float Zad2(float[] Niz)
         {
-            return 0;
+            float Prvi = Niz[0];
+            float Zadnji = Niz[Niz.Length-1];
+
+            //Cijeli dio prvog elementa
+            int CP = (int)Math.Floor(Prvi);
+            
+            //Cijeli dio zadnjeg elementa
+            int CZ = (int)Math.Floor(Zadnji);
+            
+            //Decimalni dio zadnjeg elementa
+            float DZ = Zadnji - CZ;
+
+            return CP+DZ;
         }
     }
 }
