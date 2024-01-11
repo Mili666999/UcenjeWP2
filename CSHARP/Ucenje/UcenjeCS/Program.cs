@@ -8,4 +8,10 @@
 
 //E04Nizovi.Izvedi();
 
-E05ForPetlja.Izvedi();
+//E05ForPetlja.Izvedi();
+
+//E06WhilePetlja.Izvedi();
+
+//E07DoWhilePetlja.Izvedi();
+
+E08ForEachPetlja.Izvedi();
