@@ -8,7 +8,7 @@ namespace WebAPI.Controllers
     {
 
         [HttpGet]
-        [Route("Zad1")]
+        [Route("zad1")]
         public int[] Zad1(int Brojevi)
         {
             //Ruta vraća niz s brojevima od 1 do Brojevi
@@ -25,7 +25,7 @@ namespace WebAPI.Controllers
 
 
         [HttpGet]
-        [Route("Zad2")]
+        [Route("zad2")]
         public int Zad2(int Brojevi)
         {
             //Ruta vraća zbroj svih brojeva od 1 do unešenog broja

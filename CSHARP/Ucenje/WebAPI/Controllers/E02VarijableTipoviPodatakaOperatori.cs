@@ -8,7 +8,7 @@ namespace WebAPI.Controllers
     {
 
         [HttpGet]
-        [Route("Zad1")]
+        [Route("zad1")]
         public int Zad1()
         {
             // Vratite najmanji broj
@@ -16,7 +16,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Zad2")]
+        [Route("zad2")]
         public float Zad2(int i, int j)
         {
             // Ruta vraća kvocijent dvaju primljenih brojeva
@@ -25,7 +25,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Zad3")]
+        [Route("zad3")]
         public float Zad3(int i, int j)
         {
             // Ruta vraća zbroj umnoška i kvocijenta dvaju primljenih brojeva
@@ -37,7 +37,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Zad4")]
+        [Route("zad4")]
         public string Zad4(string s, string s1)
         {
             // Ruta vraća spojene primljene znakove
@@ -46,7 +46,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Zad5")]
+        [Route("zad5")]
         public bool IstiSu(int a, int b)
         {
             // Ruta vraća True ako je a=b, inače vraća false

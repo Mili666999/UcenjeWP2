@@ -8,7 +8,7 @@ namespace WebAPI.Controllers
     {
 
         [HttpGet]
-        [Route("Zad1")]
+        [Route("zad1")]
         public string Zad1(int Broj)
         {
             // Za primljeni broj ruta vraća PARAN ili NEPARAN
@@ -38,7 +38,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Zad2")]
+        [Route("zad2")]
         public string OcjenaTekstom(int Ocjena)
         {
             // Za primljenu brojčanu vrijednost ocjene vratiti tekstualni reprezentant

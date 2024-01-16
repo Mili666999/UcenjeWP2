@@ -8,7 +8,7 @@ namespace WebAPI.Controllers
     {
 
         [HttpPost]
-        [Route("Zad1")]
+        [Route("zad1")]
         public string Zad1(string[] Podaci)
         {
             // Varti prvi element primljenog niza
@@ -17,7 +17,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut]
-        [Route("Zad2")]
+        [Route("zad2")]
         public int Zad2(string[] Podaci)
         {
             // Ruta prima cijele brojeve kao nizove znakova
@@ -42,7 +42,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("Zad3")]
+        [Route("zad3")]
         public string BrojElemenataNiza(int[] Podaci)
         {
             // Ruta vraća broj elemenata niza kao string
