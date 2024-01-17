@@ -18,6 +18,12 @@ namespace VjezbeCS
 
     internal class DomacaZadaca02
     {
+
+        internal static void Izvedi()
+        {
+            Zbroj(KreiranjeNiza());
+        }
+
         //Unos brojeva i kreiranje niza
         public static int[] KreiranjeNiza()
         {
