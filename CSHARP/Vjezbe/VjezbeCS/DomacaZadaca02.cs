@@ -40,8 +40,16 @@ namespace VjezbeCS
             for (; ; )
             {
                 Console.Write("Unesi broj: ");
-                Broj = int.Parse(Console.ReadLine());
                 
+                try
+                {
+                    Broj = int.Parse(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Nisi unio broj, probaj ponovno...");
+                }
+               
                 if (Broj == -1) 
                 {
                     break;
