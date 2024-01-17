@@ -1,4 +1,6 @@
-﻿namespace VjezbeCS
+﻿using UcenjeCS;
+
+namespace VjezbeCS
 {
     internal class Program
     {
@@ -10,6 +12,9 @@
             //V01ZimskoVjezbanje.Ispis1Do100DjeljiviSa7();
             //V01ZimskoVjezbanje.VeciOd100();
             //V01ZimskoVjezbanje.TablicaMnozenja();
+            //Console.WriteLine(DomacaZadaca01.CijeliDioZbroja(2.3f, 3.3f));
+
+
         }
     }
 }
