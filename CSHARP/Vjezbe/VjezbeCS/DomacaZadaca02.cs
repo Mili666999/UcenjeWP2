@@ -21,10 +21,38 @@ namespace VjezbeCS
 
         internal static void Izvedi()
         {
-            //Zbroj(KreiranjeNiza());
-            //Najmanji(KreiranjeNiza());
-            //Najveci(KreiranjeNiza());
-            Prosjek(KreiranjeNiza());
+            for (; ; )
+            {
+                Console.WriteLine("Za zbroj birajte 1");
+                Console.WriteLine("Za najmanji birajte 2");
+                Console.WriteLine("Za najveći birajte 3");
+                Console.WriteLine("Za prosjek birajte 4");
+                Console.WriteLine("");
+                try
+                {
+                    int Odabir = int.Parse(Console.ReadLine());
+                    switch (Odabir)
+                    {
+                        case 1:
+                            Zbroj(KreiranjeNiza());
+                            break;
+                        case 2:
+                            Najmanji(KreiranjeNiza());
+                            break;
+                        case 3:
+                            Najveci(KreiranjeNiza());
+                            break;
+                        case 4:
+                            Prosjek(KreiranjeNiza());
+                            break;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Nisi unio broj, probaj ponovno...");
+                }
+            }
+            
         }
 
         
@@ -84,7 +112,9 @@ namespace VjezbeCS
                 Zbroj = Zbroj + n;
             }
 
+            Console.WriteLine("");
             Console.WriteLine("Zbroj je: " + Zbroj);
+            Console.WriteLine("");
         }
 
 
@@ -101,7 +131,9 @@ namespace VjezbeCS
                 }
             }
 
+            Console.WriteLine("");
             Console.WriteLine("Najmanji je: " + Najmanji);
+            Console.WriteLine("");
         }
 
 
@@ -118,7 +150,9 @@ namespace VjezbeCS
                 }
             }
 
+            Console.WriteLine("");
             Console.WriteLine("Najveći je: " + Najveci);
+            Console.WriteLine("");
         }
 
 
@@ -127,15 +161,17 @@ namespace VjezbeCS
         {
             int i = 0;
             int Zbroj = 0;
-            int Prosjek = 0;
+            float Prosjek = 0.0f;
 
             foreach (int n in Niz)
             { 
                 Zbroj += n;
                 i++;
             }
-
-            Console.WriteLine("Prosjek je: " + Zbroj/i);
+            Prosjek = Zbroj / i;
+            Console.WriteLine("");
+            Console.WriteLine("Prosjek je: " + Prosjek);
+            Console.WriteLine("");
         }
 
 
