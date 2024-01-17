@@ -21,11 +21,15 @@ namespace VjezbeCS
 
         internal static void Izvedi()
         {
-            Zbroj(KreiranjeNiza());
+            //Zbroj(KreiranjeNiza());
+            //Najmanji(KreiranjeNiza());
+            //Najveci(KreiranjeNiza());
+            Prosjek(KreiranjeNiza());
         }
 
+        
         //Unos brojeva i kreiranje niza
-        public static int[] KreiranjeNiza()
+        internal static int[] KreiranjeNiza()
         {
             int i = 0;
             int j = 0;
@@ -61,8 +65,9 @@ namespace VjezbeCS
             return Niz;
         }
 
-        //Zbrajanje brojeva niza
-        public static void Zbroj(int[] Niz)
+        
+        // 1. Zbroj unesenih brojeva
+        internal static void Zbroj(int[] Niz)
         {
             int Zbroj = 0;
 
@@ -73,5 +78,59 @@ namespace VjezbeCS
 
             Console.WriteLine("Zbroj je: " + Zbroj);
         }
+
+
+        // 2. Najmanji broj
+        internal static void Najmanji(int[] Niz)
+        {
+            int Najmanji = int.MaxValue;
+
+            foreach (int n in Niz)
+            {
+                if (n < Najmanji)
+                { 
+                    Najmanji = n;
+                }
+            }
+
+            Console.WriteLine("Najmanji je: " + Najmanji);
+        }
+
+
+        // 3. Najveći broj
+        internal static void Najveci(int[] Niz)
+        {
+            int Najveci = int.MinValue;
+
+            foreach (int n in Niz)
+            {
+                if (n > Najveci)
+                {
+                    Najveci = n;
+                }
+            }
+
+            Console.WriteLine("Najveći je: " + Najveci);
+        }
+
+
+        // 4. Prosjek svih unesenih brojeva
+        internal static void Prosjek(int[] Niz)
+        {
+            int i = 0;
+            int Zbroj = 0;
+            int Prosjek = 0;
+
+            foreach (int n in Niz)
+            { 
+                Zbroj += n;
+                i++;
+            }
+
+            Console.WriteLine("Prosjek je: " + Zbroj/i);
+        }
+
+
+
     }
 }
