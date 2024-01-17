@@ -18,4 +18,3 @@
 
 //E09Metode.Izvedi();
 
-Console.WriteLine(DomacaZadaca.CijeliDioZbroja(3.4f,5.8f));
