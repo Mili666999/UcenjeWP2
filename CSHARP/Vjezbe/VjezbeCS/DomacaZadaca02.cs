@@ -25,10 +25,10 @@ namespace VjezbeCS
 
             for (; ; )
             {
-                Console.WriteLine("Za zbroj birajte 1");
-                Console.WriteLine("Za najmanji birajte 2");
-                Console.WriteLine("Za najveći birajte 3");
-                Console.WriteLine("Za prosjek birajte 4");
+                Console.WriteLine("Za ZBROJ birajte 1");
+                Console.WriteLine("Za NAJMANJI birajte 2");
+                Console.WriteLine("Za NAJVEĆI birajte 3");
+                Console.WriteLine("Za PROSJEK birajte 4");
                 Console.WriteLine("Za IZLAZ birajte 0");
                 Console.WriteLine("");
                 try
@@ -52,7 +52,10 @@ namespace VjezbeCS
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Nisi unio broj, probaj ponovno...");
+                    Console.WriteLine("");
+                    Console.WriteLine("Nisi unio broj, probaj opet...");
+                    Console.WriteLine("");
+                    Izvedi();
                 }
 
                 if (Odabir == 0)
@@ -69,7 +72,7 @@ namespace VjezbeCS
             int i = 0;
             int j = 0;
             int Broj = 0;
-            int[] PocetniNiz = new int[100];
+            int[] PocetniNiz = new int[int.MaxValue];
             
 
             for (; ; )
@@ -82,7 +85,7 @@ namespace VjezbeCS
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Nisi unio broj, probaj ponovno...");
+                    Console.WriteLine("Nisi unio broj, probaj opet...");
                 }
                
                 if (Broj == -1) 
