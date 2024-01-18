@@ -21,16 +21,19 @@ namespace VjezbeCS
 
         internal static void Izvedi()
         {
+            int Odabir = 0;
+
             for (; ; )
             {
                 Console.WriteLine("Za zbroj birajte 1");
                 Console.WriteLine("Za najmanji birajte 2");
                 Console.WriteLine("Za najveći birajte 3");
                 Console.WriteLine("Za prosjek birajte 4");
+                Console.WriteLine("Za IZLAZ birajte 0");
                 Console.WriteLine("");
                 try
                 {
-                    int Odabir = int.Parse(Console.ReadLine());
+                    Odabir = int.Parse(Console.ReadLine());
                     switch (Odabir)
                     {
                         case 1:
@@ -51,8 +54,12 @@ namespace VjezbeCS
                 {
                     Console.WriteLine("Nisi unio broj, probaj ponovno...");
                 }
+
+                if (Odabir == 0)
+                {
+                    break;
+                }
             }
-            
         }
 
         
