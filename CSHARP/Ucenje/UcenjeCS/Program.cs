@@ -18,3 +18,6 @@
 
 //E09Metode.Izvedi();
 
+//E10ObradaIznimki.Izvedi();
+
+E11Rekurzija.Izvedi();
