@@ -10,7 +10,7 @@ namespace UcenjeCS
     {
         public static void Izvedi()
         {
-            //Rekurzija je kada metoda zove samu sebe
+            //Rekurzija je kada metoda zove samu sebe uz uvjet prekida
             //Izvedi(); - Ovdje dobijemo StackOverflow iznimku
 
             Console.WriteLine(Zbroj(100));
