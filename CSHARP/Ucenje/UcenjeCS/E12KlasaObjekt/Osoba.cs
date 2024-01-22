@@ -10,10 +10,12 @@ namespace UcenjeCS.E12KlasaObjekt
     internal class Osoba
     {
         //svojstva koja opisuju klasu
-        public string? Ime { get; set; }
+        public string Ime { get; set; }
         public string Prezime { get; set; }
-        
-        
+
+        public Grad Grad { get; set; }
+
+
         public string ImePrezime()
         { 
             return Ime + " " + Prezime; //Ovo može bolje
