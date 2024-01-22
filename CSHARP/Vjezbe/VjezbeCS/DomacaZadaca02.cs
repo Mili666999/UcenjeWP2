@@ -72,7 +72,7 @@ namespace VjezbeCS
             int i = 0;
             int j = 0;
             int Broj = 0;
-            int[] PocetniNiz = new int[int.MaxValue];
+            int[] PocetniNiz = new int[100];
             
 
             for (; ; )
@@ -171,14 +171,14 @@ namespace VjezbeCS
         {
             int i = 0;
             int Zbroj = 0;
-            float Prosjek = 0.0f;
+            //var Prosjek = 0;
 
             foreach (int n in Niz)
             { 
                 Zbroj += n;
                 i++;
             }
-            Prosjek = Zbroj / i;
+            var Prosjek = Zbroj / i;
             Console.WriteLine("");
             Console.WriteLine("Prosjek je: " + Prosjek);
             Console.WriteLine("");
