@@ -171,7 +171,6 @@ namespace VjezbeCS
         {
             int i = 0;
             int Zbroj = 0;
-            //var Prosjek = 0;
 
             foreach (int n in Niz)
             { 
@@ -179,6 +178,7 @@ namespace VjezbeCS
                 i++;
             }
             var Prosjek = Zbroj / i;
+            
             Console.WriteLine("");
             Console.WriteLine("Prosjek je: " + Prosjek);
             Console.WriteLine("");
