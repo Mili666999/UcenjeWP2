@@ -34,17 +34,33 @@ namespace UcenjeCS.E12KlasaObjekt
         {
             Ljubav ljubav = new Ljubav();
 
-            string NizSLova = ljubav.PrvoIme + ljubav.DrugoIme;
-            Console.WriteLine(NizSLova);
+            string SpojImena = ljubav.PrvoIme.Trim() + ljubav.DrugoIme.Trim();
+            char[] Znakovi = SpojImena.ToCharArray();
+            
+            int[] Brojevi = new int[Znakovi.Length];
+            int Ukupno;
+            int index = 0;
+            
+            foreach (char c in Znakovi) 
+            {
+                Ukupno = 0;
+                foreach (char cc in Znakovi)
+                {
+                    if (c == cc)
+                    { 
+                        Ukupno++;
+                    }
+                }
+                Brojevi[index++] = Ukupno;
+            }
 
-
-            return new int[2];
+            return Brojevi;
         }
 
         private int Izracunaj(int[] Brojevi)
         {
 
-            Console.WriteLine(SlovaUNiz);
+
             return 67;
         }
 
