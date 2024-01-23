@@ -32,11 +32,19 @@ namespace UcenjeCS.E12KlasaObjekt
 
         private int[] SlovaUNiz(string Imena)
         {
+            Ljubav ljubav = new Ljubav();
+
+            string NizSLova = ljubav.PrvoIme + ljubav.DrugoIme;
+            Console.WriteLine(NizSLova);
+
+
             return new int[2];
         }
 
         private int Izracunaj(int[] Brojevi)
         {
+
+            Console.WriteLine(SlovaUNiz);
             return 67;
         }
 

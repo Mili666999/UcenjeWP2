@@ -11,19 +11,20 @@ namespace UcenjeCS.E12KlasaObjekt
         public static void Izvedi()
         {
 
-            Osoba o = new Osoba();
-            Grad g = new()
-            {
-                //Naziv = "Osijek",
-                BrojStanovnika = 100000
-            };
+            Ljubav ljubav = new(); // S "new" se poziva konstruktor
 
-            o.Grad = g;
+            //Console.Write("Unesi prvo ime: ");
+            //ljubav.PrvoIme = Console.ReadLine();
 
-            //Ispisati Osijek na instanci klase Osoba
-            Console.WriteLine(o.Grad.Naziv);
+            ljubav.PrvoIme = Unos("Unesi prvo ime: ");
+            ljubav.DrugoIme = Unos("Unesi drugo ime: ");
+
+            Console.WriteLine(ljubav.Rezultat());
+
+            //Console.WriteLine(new Ljubav(Unos("PI"), Unos("DI")).Rezultat());
 
         }
+
 
         private static string Unos(string Poruka) 
         {
@@ -42,6 +43,22 @@ namespace UcenjeCS.E12KlasaObjekt
                 return Unos;
             
             }
+        }
+
+
+        private static void IspisOsijek() 
+        {
+            Osoba o = new Osoba();
+            Grad g = new()
+            {
+                Naziv = "Osijek",
+                BrojStanovnika = 100000
+            };
+
+            o.Grad = g;
+
+            //Ispisati Osijek na instanci klase Osoba
+            Console.WriteLine(o.Grad.Naziv);
         }
 
 
