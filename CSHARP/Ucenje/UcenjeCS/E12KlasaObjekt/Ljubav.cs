@@ -34,7 +34,7 @@ namespace UcenjeCS.E12KlasaObjekt
         {
             Ljubav ljubav = new Ljubav();
 
-            string SpojImena = ljubav.PrvoIme.Trim() + ljubav.DrugoIme.Trim();
+            string SpojImena = PrvoIme.Trim() + DrugoIme.Trim();
             char[] Znakovi = SpojImena.ToCharArray();
             
             int[] Brojevi = new int[Znakovi.Length];
@@ -59,9 +59,22 @@ namespace UcenjeCS.E12KlasaObjekt
 
         private int Izracunaj(int[] Brojevi)
         {
+            int Rezultat = 0;
+            int Index = 0;
+            int[] NoviNiz = new int[Brojevi.Length/2];
+
+            for(int i = 0; i < Brojevi.Length; i++) 
+            {
+                for (int j = 0; j > Brojevi.Length; j--)
+                {
+                    NoviNiz[Index] = Brojevi[i] + Brojevi[j];
+                    Index++;
+                }
+            }
 
 
-            return 67;
+
+            return Rezultat;
         }
 
         
