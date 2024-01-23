@@ -46,7 +46,7 @@ namespace VjezbeCS
                             Najveci(KreiranjeNiza());
                             break;
                         case 4:
-                            Prosjek(KreiranjeNiza());
+                            Prosjek(Zbroj(KreiranjeNiza()));
                             break;
                     }
                 }
@@ -113,18 +113,22 @@ namespace VjezbeCS
 
         
         // 1. Zbroj unesenih brojeva
-        internal static void Zbroj(int[] Niz)
+        internal static float Zbroj(int[] Niz)
         {
             int Zbroj = 0;
+            int i = 0;
 
             foreach (int n in Niz) 
             {
                 Zbroj = Zbroj + n;
+                i++;
             }
 
             Console.WriteLine("");
             Console.WriteLine("Zbroj je: " + Zbroj);
             Console.WriteLine("");
+
+            return Zbroj/i;
         }
 
 
@@ -167,20 +171,10 @@ namespace VjezbeCS
 
 
         // 4. Prosjek svih unesenih brojeva
-        internal static void Prosjek(int[] Niz)
+        internal static void Prosjek(float x)
         {
-            int i = 0;
-            int Zbroj = 0;
-
-            foreach (int n in Niz)
-            { 
-                Zbroj += n;
-                i++;
-            }
-            var Prosjek = Zbroj / i;
-            
             Console.WriteLine("");
-            Console.WriteLine("Prosjek je: " + Prosjek);
+            Console.WriteLine("Prosjek je: " + x);
             Console.WriteLine("");
         }
 
