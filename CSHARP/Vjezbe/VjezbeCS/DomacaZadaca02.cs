@@ -31,6 +31,7 @@ namespace VjezbeCS
                 Console.WriteLine("Za PROSJEK birajte 4");
                 Console.WriteLine("Za IZLAZ birajte 0");
                 Console.WriteLine("");
+
                 try
                 {
                     Odabir = int.Parse(Console.ReadLine());
@@ -77,6 +78,7 @@ namespace VjezbeCS
 
             for (; ; )
             {
+                Console.WriteLine("Za KRAJ UNOSA unesite -1");
                 Console.Write("Unesi broj: ");
                 
                 try
@@ -125,10 +127,10 @@ namespace VjezbeCS
             }
 
             Console.WriteLine("");
-            Console.WriteLine("Zbroj je: " + Zbroj);
+            Console.WriteLine("Zbroj je: " + Zbroj + ", i je: " + i);
             Console.WriteLine("");
 
-            return Zbroj/i;
+            return Zbroj / (float)i;
         }
 
 
