@@ -13,7 +13,9 @@ namespace VjezbeCS
             //V01ZimskoVjezbanje.VeciOd100();
             //V01ZimskoVjezbanje.TablicaMnozenja();
             //Console.WriteLine(DomacaZadaca01.CijeliDioZbroja(2.3f, 3.3f));
-            DomacaZadaca02.Izvedi();
+            //DomacaZadaca02.Izvedi();
+            LjubavniKalkulator.Program.Izvedi();
+
 
 
         }
