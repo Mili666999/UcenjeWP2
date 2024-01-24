@@ -32,49 +32,73 @@ namespace UcenjeCS.E12KlasaObjekt
 
         private int[] SlovaUNiz(string Imena)
         {
-            Ljubav ljubav = new Ljubav();
 
-            string SpojImena = PrvoIme.Trim() + DrugoIme.Trim();
+            string SpojImena = PrvoIme.Trim().ToLower() + DrugoIme.Trim().ToLower();
             char[] Znakovi = SpojImena.ToCharArray();
             
             int[] Brojevi = new int[Znakovi.Length];
-            int Ukupno;
+            int Zbroj;
             int index = 0;
             
             foreach (char c in Znakovi) 
             {
-                Ukupno = 0;
+                Zbroj = 0;
                 foreach (char cc in Znakovi)
                 {
                     if (c == cc)
                     { 
-                        Ukupno++;
+                        Zbroj++;
                     }
                 }
-                Brojevi[index++] = Ukupno;
+                Brojevi[index++] = Zbroj;
             }
 
             return Brojevi;
+
         }
 
-        private int Izracunaj(int[] Brojevi)
+        private int Izracunaj(int[] BrojevniNiz)
         {
-            int Rezultat = 0;
-            int Index = 0;
-            int[] NoviNiz = new int[Brojevi.Length/2];
 
-            for(int i = 0; i < Brojevi.Length; i++) 
+            int Rezultat = 0;
+            int[] NoviNiz = new int[0];
+            
+            //Kreiram NoviNiz upola manji od BrojevnogNiza ako je ovaj paran
+            //Ili upola + 1 ako je BrojevniNiz neparan
+            if (BrojevniNiz.Length % 2 == 0)
             {
-                for (int j = 0; j > Brojevi.Length; j--)
-                {
-                    NoviNiz[Index] = Brojevi[i] + Brojevi[j];
-                    Index++;
-                }
+                NoviNiz = new int[BrojevniNiz.Length / 2];
+            }
+            else
+            {
+                NoviNiz = new int[(BrojevniNiz.Length / 2) + 1];
+            }
+            
+            //Zbrajam elemente BrojevnogNiza do sredine
+            //(ako je niz neparan, središnji element ne diram)
+            for(int i = 0,j = BrojevniNiz.Length-1; i < BrojevniNiz.Length/2 && j >= BrojevniNiz.Length/2; i++, j--) 
+            {
+                NoviNiz[i] = BrojevniNiz[i] + BrojevniNiz[j];
             }
 
+            //Ako je BrojevniNiz neparan, središnji element stavljam na kraj NovogNiza
+            if (BrojevniNiz.Length % 2 != 0)
+            {
+                NoviNiz[NoviNiz.Length - 1] = BrojevniNiz[(BrojevniNiz.Length / 2) + 1];
+            }
 
-
+            //Prebacujem NoviNiz u string da bi se riješio dvoznamenkastih brojeva
+            //i provjeravam Rezultat
+            string Brojevi = string.Join("", NoviNiz);
+            Rezultat = Int32.Parse(Brojevi);
+            if (Rezultat > 100)
+            {
+                NoviNiz = Brojevi.Split(',').Select(int.Parse).ToArray();
+                Izracunaj(NoviNiz);
+            }
+            
             return Rezultat;
+
         }
 
         
