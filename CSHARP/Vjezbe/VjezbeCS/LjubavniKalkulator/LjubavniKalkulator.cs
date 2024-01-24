@@ -97,7 +97,7 @@ namespace VjezbeCS.LjubavniKalkulator
             if (Rezultat > 100)
             {
                 NoviNiz = Brojevi.Select(c => Convert.ToInt32(c.ToString())).ToArray();
-                _ = Izracunaj(NoviNiz);
+                Izracunaj(NoviNiz);
             }
             
             return Rezultat;
