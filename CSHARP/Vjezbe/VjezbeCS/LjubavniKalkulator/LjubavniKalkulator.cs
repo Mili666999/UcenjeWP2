@@ -33,28 +33,30 @@ namespace VjezbeCS.LjubavniKalkulator
 
         private int[] SlovaUNiz(string Imena)
         {
-
+            //Spajam imena u jedan string i prebacujem u znakovni niz
             string SpojImena = PrvoIme.Trim().ToLower() + DrugoIme.Trim().ToLower();
-            char[] Znakovi = SpojImena.ToCharArray();
+            char[] ZnakovniNiz = SpojImena.ToCharArray();
 
-            int[] Brojevi = new int[Znakovi.Length];
+            //Kreiram brojevni niz dužine znakovnog niza
+            int[] BrojevniNiz = new int[ZnakovniNiz.Length];
             int Zbroj;
             int index = 0;
 
-            foreach (char c in Znakovi)
+            //Prebrojavam elemente znakovnog niza i zapisujem u brojevni niz 
+            foreach (char c in ZnakovniNiz)
             {
                 Zbroj = 0;
-                foreach (char cc in Znakovi)
+                foreach (char cc in ZnakovniNiz)
                 {
                     if (c == cc)
                     {
                         Zbroj++;
                     }
                 }
-                Brojevi[index++] = Zbroj;
+                BrojevniNiz[index++] = Zbroj;
             }
 
-            return Brojevi;
+            return BrojevniNiz;
 
         }
 
@@ -62,7 +64,7 @@ namespace VjezbeCS.LjubavniKalkulator
         {
 
             int Rezultat = 0;
-            int[] NoviNiz = new int[0];
+            int[] NoviNiz = [];
 
             //Kreiram NoviNiz upola manji od BrojevnogNiza ako je ovaj paran
             //Ili upola + 1 ako je BrojevniNiz neparan
@@ -81,23 +83,23 @@ namespace VjezbeCS.LjubavniKalkulator
             {
                 NoviNiz[i] = BrojevniNiz[i] + BrojevniNiz[j];
             }
-
+            
             //Ako je BrojevniNiz neparan, središnji element stavljam na kraj NovogNiza
             if (BrojevniNiz.Length % 2 != 0)
             {
                 NoviNiz[NoviNiz.Length - 1] = BrojevniNiz[(BrojevniNiz.Length / 2) + 1];
             }
-
+            
             //Prebacujem NoviNiz u string da bi se riješio dvoznamenkastih brojeva
             //i provjeravam Rezultat
             string Brojevi = string.Join("", NoviNiz);
             Rezultat = Int32.Parse(Brojevi);
             if (Rezultat > 100)
             {
-                NoviNiz = Brojevi.Split(',').Select(int.Parse).ToArray();
-                Izracunaj(NoviNiz);
+                NoviNiz = Brojevi.Select(c => Convert.ToInt32(c.ToString())).ToArray();
+                _ = Izracunaj(NoviNiz);
             }
-
+            
             return Rezultat;
 
         }
