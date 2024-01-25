@@ -22,4 +22,6 @@
 
 //E11Rekurzija.Izvedi();
 
-UcenjeCS.E12KlasaObjekt.Program.Izvedi();
+//UcenjeCS.E12KlasaObjekt.Program.Izvedi();
+
+UcenjeCS.E13Nasljedivanje.Program.Izvedi();
