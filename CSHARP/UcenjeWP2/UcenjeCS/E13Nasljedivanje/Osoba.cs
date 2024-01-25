@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS.E13Nasljedivanje
 {
-    internal class Osoba:Entitet
+    internal class Osoba : Entitet
     {
         private int NeVidim;
         protected int Vidim;
@@ -15,5 +15,26 @@ namespace UcenjeCS.E13Nasljedivanje
         public string Prezime { get; set; }
         public string Oib { get; set; }
         public string Email { get; set; }
+
+
+        public Osoba()
+        {
+            Console.WriteLine("Konstruktor osoba");
+        }
+
+
+        public Osoba(int sifra, string ime, string prezime, string oib, string email) : base(sifra) 
+        {
+            Ime = ime; Prezime = prezime; Oib = oib; Email = email;
+        }
+
+
+        public override string ToString()
+        {
+            //return Ime + " " + Prezime; //Ovo je užas
+            return new StringBuilder(Ime).Append(' ').Append(Prezime).ToString();
+        }
     }
+
+    
 }
