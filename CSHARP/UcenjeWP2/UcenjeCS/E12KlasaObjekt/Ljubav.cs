@@ -8,12 +8,13 @@ namespace UcenjeCS.E12KlasaObjekt
 {
     internal class Ljubav
     {
+
         public string? PrvoIme { get; set; }
         public string? DrugoIme { get; set; }
 
 
         //Ovo je konstruktor - %. vrsta metode
-        public Ljubav() 
+        public Ljubav()
         {
             //Ovdje se dolazi  kada se izvodi ključna riječ "new"
         }
@@ -25,11 +26,25 @@ namespace UcenjeCS.E12KlasaObjekt
             DrugoIme = drugoIme;
         }
 
-        
 
-        
+        public string Rezultat()
+        {
+            return Izracunaj(SlovaUNiz(PrvoIme + DrugoIme)) + " %";
+        }
 
-        
+        private int[] SlovaUNiz(string Imena)
+        {
+            // fiksno
+            return new int[2];
+        }
+
+        private int Izracunaj(int[] Brojevi)
+        {
+            // ovo je sad fiksno, tu dolazi rekurzivni algoritam
+            return 67;
+        }
+
+
 
     }
 }

@@ -13,7 +13,7 @@ namespace UcenjeCS.E12KlasaObjekt.Edunova
         public string Naziv { get; set; }
         public int BrojSati { get; set; }
         public float Cijena { get; set; }
-        public float Upisnina { get; set; }
+        public float Upisnina; //Može i ovako, ali pravi prroblem u multithreading-u
         public bool Verificiran { get; set; }
     }
 }
