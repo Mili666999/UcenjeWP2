@@ -90,19 +90,27 @@ namespace VjezbeCS.LjubavniKalkulator
                 NoviNiz[NoviNiz.Length - 1] = BrojevniNiz[(BrojevniNiz.Length / 2) + 1];
             }
             
-            //Prebacujem NoviNiz u string da bi se riješio dvoznamenkastih brojeva
+            //Prebacujem niz NoviNiz u string Brojevi da bi se riješio dvoznamenkastih brojeva
             //i provjeravam Rezultat
             string Brojevi = string.Join("", NoviNiz);
+            NoviNiz = new int[Brojevi.Length];
             Rezultat = Int32.Parse(Brojevi);
+
+            //Ako je ispis stringa Brojevi veći od 100, vraćam ga u niz NizBrojeva i rekurziram
             if (Rezultat > 100)
             {
-                NoviNiz = Brojevi.Select(c => Convert.ToInt32(c.ToString())).ToArray();
-                Izracunaj(NoviNiz);
+                Console.WriteLine(Rezultat);
+                for (int i = 0; i < Brojevi.Length; i++)
+                {
+                    NoviNiz[i] = Convert.ToInt32(Brojevi[i].ToString());
+                }
+                return Izracunaj(NoviNiz);
+                
             }
-            
+
             return Rezultat;
 
-        }
 
+        }
     }
 }
