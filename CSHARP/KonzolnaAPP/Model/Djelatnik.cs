@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KonzolnaAPP.Model
 {
-    internal class Djelatnik
+    internal class Djelatnik : Entitet
     {
         public int Id { get; set; }
         public string Ime { get; set; }
@@ -14,5 +14,7 @@ namespace KonzolnaAPP.Model
         public string Kontakt { get; set; }
         public string Oib { get; set; }
         public string Iban { get; set; }
+        
+
     }
 }
