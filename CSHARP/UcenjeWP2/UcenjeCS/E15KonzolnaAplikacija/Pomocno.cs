@@ -8,12 +8,29 @@ namespace UcenjeCS.E15KonzolnaAplikacija
 {
     internal class Pomocno
     {
+        public static int UcitajInt(string Poruka)
+        {
+            for (; ; )
+            {
+                Console.Write(Poruka);
+                try
+                { 
+                    return int.Parse(Console.ReadLine());
+                }
+                catch 
+                {
+                    Console.WriteLine("Neispravan unos");
+                }
+            }
+
+        }
+
         public static string UcitajString(string Poruka)
         {
             string s;
             while (true) 
             {
-                Console.WriteLine(Poruka);
+                Console.Write(Poruka);
                 s = Console.ReadLine();
                 if(s.Trim().Length == 0) 
                 {
@@ -24,5 +41,11 @@ namespace UcenjeCS.E15KonzolnaAplikacija
                 
             }
         }
+
+
+
+
+
+
     }
 }
