@@ -14,7 +14,10 @@ namespace KonzolnaAPP.Model
         public string Kontakt { get; set; }
         public string Oib { get; set; }
         public string Iban { get; set; }
-        
 
+        public override string ToString()
+        {
+            return Ime;
+        }
     }
 }
