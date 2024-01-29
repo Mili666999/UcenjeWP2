@@ -56,6 +56,12 @@ namespace VjezbeCS.LjubavniKalkulator
                 BrojevniNiz[index++] = Zbroj;
             }
 
+            foreach (int i in BrojevniNiz) 
+            {
+                Console.Write(i);
+            }
+            Console.WriteLine();
+
             return BrojevniNiz;
 
         }
@@ -87,7 +93,7 @@ namespace VjezbeCS.LjubavniKalkulator
             //Ako je BrojevniNiz neparan, središnji element stavljam na kraj NovogNiza
             if (BrojevniNiz.Length % 2 != 0)
             {
-                NoviNiz[NoviNiz.Length - 1] = BrojevniNiz[(BrojevniNiz.Length / 2) + 1];
+                NoviNiz[NoviNiz.Length - 1] = BrojevniNiz[BrojevniNiz.Length / 2];
             }
             
             //Prebacujem niz NoviNiz u string Brojevi da bi se riješio dvoznamenkastih brojeva
