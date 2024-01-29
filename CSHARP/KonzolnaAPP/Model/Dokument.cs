@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace KonzolnaAPP.Model
 {
-    internal class Dokument
+    internal class Dokument:Entitet
     {
-        public int Id { get; set; }
         public string Naziv { get; set; }
-        public string Lokacija { get; set; }
+        //public string Lokacija { get; set; }
         public Djelatnik Djelatnik { get; set; }
     }
 }
