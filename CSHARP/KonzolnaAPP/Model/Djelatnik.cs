@@ -17,7 +17,7 @@ namespace KonzolnaAPP.Model
 
         public override string ToString()
         {
-            return Ime;
+            return Prezime + ", " + Ime;
         }
     }
 }

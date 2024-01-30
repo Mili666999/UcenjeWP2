@@ -13,10 +13,12 @@ namespace KonzolnaAPP
 
 
         private List<Djelatnik> Djelatnici;
+        private List<Dokument> Dokumenti;
 
 
         public Program()
         {
+            Dokumenti = new List<Dokument>();
             Djelatnici = new List<Djelatnik>();
             PozdravnaPoruka();
             Izbornik();
@@ -164,17 +166,80 @@ namespace KonzolnaAPP
             Console.WriteLine();
             Console.WriteLine("***DOKUMENTI***");
             Console.WriteLine();
-            Console.WriteLine("1. Dodaj dokument");
-            Console.WriteLine("2. Uredi dokument");
-            Console.WriteLine("3. Izbriši dokument");
-            Console.WriteLine("4. Povratak na glavni izbornik");
+            Console.WriteLine("1. Prikaži sve dokumente");
+            Console.WriteLine("2. Dodaj dokument");
+            Console.WriteLine("3. Uredi dokument");
+            Console.WriteLine("4. Izbriši dokument");
+            Console.WriteLine("5. Povratak na glavni izbornik");
             OdabirStavkeIzbornikDokumenta();
         }
 
         private void OdabirStavkeIzbornikDokumenta()
         {
-            throw new NotImplementedException();
+            switch (Pomocno.UcitajInt("Odaberi stavku izbornika: "))
+            {
+                case 1:
+                    Console.WriteLine("Prikaži sve dokumente");
+                    PrikaziSveDokumente();
+                    break;
+                case 2:
+                    Console.WriteLine("Dodaj dokument");
+                    DodajDokument();
+                    break;
+                case 3:
+                    Console.WriteLine("Uredi dokument");
+                    UrediDokument();
+                    break;
+                case 4:
+                    Console.WriteLine("Izbriši dokument");
+                    IzbrisiDokument();
+                    break;
+                case 5:
+                    Izbornik();
+                    break;
+                default:
+                    Console.WriteLine("Krivi odabir");
+                    OdabirStavkeIzbornikDokumenta();
+                    break;
+            }
         }
+
+        private void PrikaziSveDokumente()
+        {
+            var i = 0;
+            Dokumenti.ForEach(dok => {
+                Console.WriteLine(++i + ". " + dok);
+            });
+            Console.WriteLine("**********************");
+            IzbornikRadSDokumentima();
+        }
+
+        private void DodajDokument()
+        {
+            Dokumenti.Add(new Dokument()
+            {
+                Id = Pomocno.UcitajInt("Unesi šifru dokumenta: "),
+                Naziv = Pomocno.UcitajString("Unesi ime dokumenta: "),                
+            });
+            IzbornikRadSDokumentima();
+        }
+
+        private void UrediDokument()
+        {
+            PrikaziSveDokumente();
+            var dok = Dokumenti[Pomocno.UcitajInt("Odaberi dokumnt za promjenu: ") - 1];
+            dok.Id = Pomocno.UcitajInt(dok.Id + ", Unesi novu šifru: ");
+            dok.Naziv = Pomocno.UcitajString(dok.Naziv + ", Unesi novi naziv: ");
+            IzbornikRadSDokumentima(); ;
+        }
+
+        private void IzbrisiDokument()
+        {
+            PrikaziSveDokumente();
+            Dokumenti.RemoveAt(Pomocno.UcitajInt("Unesi dokument za brisanje: ") - 1);
+            IzbornikRadSDokumentima();
+        }
+
 
         //Fotografije *********************************************
         private void IzbornikRadSFotografijama()
@@ -182,10 +247,11 @@ namespace KonzolnaAPP
             Console.WriteLine();
             Console.WriteLine("***FOTOGRAFIJE***");
             Console.WriteLine();
-            Console.WriteLine("1. Dodaj fotografiju");
-            Console.WriteLine("2. Uredi fotografiju");
-            Console.WriteLine("3. Izbriši fotografiju");
-            Console.WriteLine("4. Povratak na glavni izbornik");
+            Console.WriteLine("1. Prikaži sve fotografije");
+            Console.WriteLine("2. Dodaj fotografiju");
+            Console.WriteLine("3. Uredi fotografiju");
+            Console.WriteLine("4. Izbriši fotografiju");
+            Console.WriteLine("5. Povratak na glavni izbornik");
             OdabirStavkeIzbornikFotografija();
         }
 

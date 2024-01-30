@@ -21,10 +21,10 @@ namespace KonzolnaAPP
                 {
                     Console.WriteLine("Neispravan unos");
                 }
-
             }
-
         }
+
+
         public static string UcitajString(string poruka)
         {
             string s;
@@ -38,6 +38,30 @@ namespace KonzolnaAPP
                     continue;
                 }
                 return s;
+            }
+        }
+
+
+        public static int UcitajBrojRaspon(string poruka, string greska,
+           int poc, int kraj)
+        {
+            int b;
+            while (true)
+            {
+                Console.Write(poruka);
+                try
+                {
+                    b = int.Parse(Console.ReadLine());
+                    if (b >= poc && b <= kraj)
+                    {
+                        return b;
+                    }
+                    Console.WriteLine(greska);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(greska);
+                }
             }
         }
     }
