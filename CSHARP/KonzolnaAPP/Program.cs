@@ -14,12 +14,14 @@ namespace KonzolnaAPP
 
         private List<Djelatnik> Djelatnici;
         private List<Dokument> Dokumenti;
+        private List<Fotografija> Fotografije;
 
 
         public Program()
-        {
-            Dokumenti = new List<Dokument>();
+        {           
             Djelatnici = new List<Djelatnik>();
+            Dokumenti = new List<Dokument>();
+            Fotografije = new List<Fotografija>();
             PozdravnaPoruka();
             Izbornik();
 
@@ -51,15 +53,15 @@ namespace KonzolnaAPP
             switch (Pomocno.UcitajInt("Unesi stavku izbornika: "))
             {
                 case 1:
-                    Console.WriteLine("Rad s djelatnicima");
+                    Console.WriteLine("Rad s djelatnicima...");
                     IzbornikRadSDjelatnicima();
                     break;
                 case 2:
-                    Console.WriteLine("Rad s dokumentima");
+                    Console.WriteLine("Rad s dokumentima...");
                     IzbornikRadSDokumentima();
                     break;
                 case 3:
-                    Console.WriteLine("Rad s fotografijama");
+                    Console.WriteLine("Rad s fotografijama...");
                     IzbornikRadSFotografijama();
                     break;
                 case 4:
@@ -91,25 +93,31 @@ namespace KonzolnaAPP
             switch (Pomocno.UcitajInt("Odaberi stavku izbornika: "))
             {
                 case 1:
-                    Console.WriteLine("Prikaži sve djelatnike");
+                    Console.WriteLine();
+                    Console.WriteLine("Prikaži sve djelatnike:");
                     PrikaziSveDjelatnike();
+                    IzbornikRadSDjelatnicima();
                     break;
                 case 2:
-                    Console.WriteLine("Dodaj djelatnika");
+                    Console.WriteLine();
+                    Console.WriteLine("Dodaj djelatnika:");
                     DodajDjelatnika();
                     break;
                 case 3:
-                    Console.WriteLine("Uredi djelatnika");
+                    Console.WriteLine();
+                    Console.WriteLine("Uredi djelatnika:");
                     UrediDjelatnika();
                     break;
                 case 4:
-                    Console.WriteLine("Izbriši djelatnika");
+                    Console.WriteLine();
+                    Console.WriteLine("Izbriši djelatnika:");
                     IzbrisiDjelatnika();
                     break;
                 case 5:
                     Izbornik();
                     break;
                 default:
+                    Console.WriteLine();
                     Console.WriteLine("Krivi odabir");
                     OdabirStavkeIzbornikDjelatnika();
                     break;
@@ -122,8 +130,11 @@ namespace KonzolnaAPP
             Djelatnici.ForEach(dj => {
                 Console.WriteLine(++i + ". " + dj);
             });
-            Console.WriteLine("**********************");
-            IzbornikRadSDjelatnicima();
+            if (Fotografije.Count == 0)
+            {
+                Console.WriteLine("Nema djelatnika za prikaz");
+            }
+            Console.WriteLine("----------------------------");
         }
 
         private void DodajDjelatnika()
@@ -137,6 +148,7 @@ namespace KonzolnaAPP
                 Oib = Pomocno.UcitajString("Unesi OIB djelatnika: "),
                 Iban = Pomocno.UcitajString("Unesi IBAN djelatnika: ")
             });
+            Console.WriteLine();
             IzbornikRadSDjelatnicima();
         }
 
@@ -150,6 +162,7 @@ namespace KonzolnaAPP
             dj.Kontakt = Pomocno.UcitajString(dj.Kontakt + ", Unesi novi kontakt: ");
             dj.Oib = Pomocno.UcitajString(dj.Oib + ", Unesi novi OIB: ");
             dj.Iban = Pomocno.UcitajString(dj.Iban + ", Unesi novi IBAN: ");
+            Console.WriteLine();
             IzbornikRadSDjelatnicima();
         }
 
@@ -157,6 +170,7 @@ namespace KonzolnaAPP
         {
             PrikaziSveDjelatnike();
             Djelatnici.RemoveAt(Pomocno.UcitajInt("Unesi djelatnika za brisanje: ")-1);
+            Console.WriteLine();
             IzbornikRadSDjelatnicima();
         }
 
@@ -179,25 +193,31 @@ namespace KonzolnaAPP
             switch (Pomocno.UcitajInt("Odaberi stavku izbornika: "))
             {
                 case 1:
-                    Console.WriteLine("Prikaži sve dokumente");
+                    Console.WriteLine();
+                    Console.WriteLine("Prikaži sve dokumente:");
                     PrikaziSveDokumente();
+                    IzbornikRadSDokumentima();
                     break;
                 case 2:
-                    Console.WriteLine("Dodaj dokument");
+                    Console.WriteLine();
+                    Console.WriteLine("Dodaj dokument:");
                     DodajDokument();
                     break;
                 case 3:
-                    Console.WriteLine("Uredi dokument");
+                    Console.WriteLine();
+                    Console.WriteLine("Uredi dokument:");
                     UrediDokument();
                     break;
                 case 4:
-                    Console.WriteLine("Izbriši dokument");
+                    Console.WriteLine();
+                    Console.WriteLine("Izbriši dokument:");
                     IzbrisiDokument();
                     break;
                 case 5:
                     Izbornik();
                     break;
                 default:
+                    Console.WriteLine();
                     Console.WriteLine("Krivi odabir");
                     OdabirStavkeIzbornikDokumenta();
                     break;
@@ -210,8 +230,11 @@ namespace KonzolnaAPP
             Dokumenti.ForEach(dok => {
                 Console.WriteLine(++i + ". " + dok);
             });
-            Console.WriteLine("**********************");
-            IzbornikRadSDokumentima();
+            if (Fotografije.Count == 0)
+            {
+                Console.WriteLine("Nema dokumenata za prikaz");
+            }
+            Console.WriteLine("----------------------------");
         }
 
         private void DodajDokument()
@@ -227,7 +250,7 @@ namespace KonzolnaAPP
         private void UrediDokument()
         {
             PrikaziSveDokumente();
-            var dok = Dokumenti[Pomocno.UcitajInt("Odaberi dokumnt za promjenu: ") - 1];
+            var dok = Dokumenti[Pomocno.UcitajInt("Odaberi dokument za promjenu: ") - 1];
             dok.Id = Pomocno.UcitajInt(dok.Id + ", Unesi novu šifru: ");
             dok.Naziv = Pomocno.UcitajString(dok.Naziv + ", Unesi novi naziv: ");
             IzbornikRadSDokumentima(); ;
@@ -257,7 +280,77 @@ namespace KonzolnaAPP
 
         private void OdabirStavkeIzbornikFotografija()
         {
-            throw new NotImplementedException();
+            switch (Pomocno.UcitajInt("Odaberi stavku izbornika: "))
+            {
+                case 1:
+                    Console.WriteLine();
+                    Console.WriteLine("Prikaži sve fotografije:");
+                    PrikaziSveFotografije();
+                    IzbornikRadSFotografijama();
+                    break;
+                case 2:
+                    Console.WriteLine();
+                    Console.WriteLine("Dodaj fotografiju:");
+                    DodajFotografiju();
+                    break;
+                case 3:
+                    Console.WriteLine();
+                    Console.WriteLine("Uredi fotografiju:");
+                    UrediFotografiju();
+                    break;
+                case 4:
+                    Console.WriteLine();
+                    Console.WriteLine("Izbriši fotografiju:");
+                    IzbrisiFotografiju();
+                    break;
+                case 5:
+                    Izbornik();
+                    break;
+                default:
+                    Console.WriteLine();
+                    Console.WriteLine("Krivi odabir");
+                    OdabirStavkeIzbornikFotografija();
+                    break;
+            }
+        }
+
+        private void PrikaziSveFotografije()
+        {
+            var i = 0;
+            Fotografije.ForEach(fot => {
+                Console.WriteLine(++i + ". " + fot);
+            });
+            if (Fotografije.Count == 0)
+            {
+                Console.WriteLine("Nema fotografija za prikaz");
+            }
+            Console.WriteLine("----------------------------");
+        }
+
+        private void DodajFotografiju()
+        {
+            Fotografije.Add(new Fotografija()
+            {
+                Id = Pomocno.UcitajInt("Unesi šifru fotografije: "),
+                Naziv = Pomocno.UcitajString("Unesi ime fotografije: "),                
+            });
+            IzbornikRadSFotografijama();
+        }
+
+        private void UrediFotografiju()
+        {
+            PrikaziSveFotografije();
+            var fot = Fotografije[Pomocno.UcitajInt("Odaberi fotografiju za promjenu: ") - 1];
+            fot.Id = Pomocno.UcitajInt(fot.Id + ", Unesi novu šifru: ");
+            fot.Naziv = Pomocno.UcitajString(fot.Naziv + ", Unesi novi naziv: ");
+            IzbornikRadSFotografijama(); ;
+        }
+
+        private void IzbrisiFotografiju()
+        {
+            PrikaziSveFotografije();
+            Fotografije.RemoveAt(Pomocno.UcitajInt("Unesi fotografiju za brisanje: ") - 1);
+            IzbornikRadSFotografijama();
         }
     }
 }

@@ -11,5 +11,10 @@ namespace KonzolnaAPP.Model
         public string Naziv { get; set; }
         //public string Lokacija { get; set; }
         public Djelatnik Djelatnik { get; set; }
+
+        public override string ToString()
+        {
+            return Naziv;
+        }
     }
 }

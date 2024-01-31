@@ -8,11 +8,11 @@ namespace KonzolnaAPP
 {
     internal class Pomocno
     {
-        public static int UcitajInt(string poruka)
+        public static int UcitajInt(string Poruka)
         {
             for (; ; )
             {
-                Console.Write(poruka);
+                Console.Write(Poruka);
                 try
                 {
                     return int.Parse(Console.ReadLine());
@@ -25,12 +25,12 @@ namespace KonzolnaAPP
         }
 
 
-        public static string UcitajString(string poruka)
+        public static string UcitajString(string Poruka)
         {
             string s;
             while (true)
             {
-                Console.Write(poruka);
+                Console.Write(Poruka);
                 s = Console.ReadLine();
                 if (s.Trim().Length == 0)
                 {
@@ -42,13 +42,13 @@ namespace KonzolnaAPP
         }
 
 
-        public static int UcitajBrojRaspon(string poruka, string greska,
+        public static int UcitajBrojRaspon(string Poruka, string Greska,
            int poc, int kraj)
         {
             int b;
             while (true)
             {
-                Console.Write(poruka);
+                Console.Write(Poruka);
                 try
                 {
                     b = int.Parse(Console.ReadLine());
@@ -56,11 +56,11 @@ namespace KonzolnaAPP
                     {
                         return b;
                     }
-                    Console.WriteLine(greska);
+                    Console.WriteLine(Greska);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(greska);
+                    Console.WriteLine(Greska);
                 }
             }
         }
