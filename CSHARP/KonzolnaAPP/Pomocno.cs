@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KonzolnaAPP.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,5 +65,11 @@ namespace KonzolnaAPP
                 }
             }
         }
+
+
+        public static void ProvjeraSifre(int[] IskoristeneSifre)
+        {
+               
+        }       
     }
 }

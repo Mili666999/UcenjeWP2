@@ -124,13 +124,13 @@ namespace KonzolnaAPP
             }
         }
 
-        private void PrikaziSveDjelatnike()
+        public void PrikaziSveDjelatnike()
         {
             var i = 0;
             Djelatnici.ForEach(dj => {
                 Console.WriteLine(++i + ". " + dj);
             });
-            if (Fotografije.Count == 0)
+            if (Djelatnici.Count == 0)
             {
                 Console.WriteLine("Nema djelatnika za prikaz");
             }
@@ -230,7 +230,7 @@ namespace KonzolnaAPP
             Dokumenti.ForEach(dok => {
                 Console.WriteLine(++i + ". " + dok);
             });
-            if (Fotografije.Count == 0)
+            if (Dokumenti.Count == 0)
             {
                 Console.WriteLine("Nema dokumenata za prikaz");
             }
@@ -242,7 +242,8 @@ namespace KonzolnaAPP
             Dokumenti.Add(new Dokument()
             {
                 Id = Pomocno.UcitajInt("Unesi šifru dokumenta: "),
-                Naziv = Pomocno.UcitajString("Unesi ime dokumenta: "),                
+                Naziv = Pomocno.UcitajString("Unesi ime dokumenta: "),
+                Djelatnik = PostaviDjelatnika()
             });
             IzbornikRadSDokumentima();
         }
@@ -332,7 +333,8 @@ namespace KonzolnaAPP
             Fotografije.Add(new Fotografija()
             {
                 Id = Pomocno.UcitajInt("Unesi šifru fotografije: "),
-                Naziv = Pomocno.UcitajString("Unesi ime fotografije: "),                
+                Naziv = Pomocno.UcitajString("Unesi ime fotografije: "), 
+                Djelatnik = PostaviDjelatnika()
             });
             IzbornikRadSFotografijama();
         }
@@ -351,6 +353,14 @@ namespace KonzolnaAPP
             PrikaziSveFotografije();
             Fotografije.RemoveAt(Pomocno.UcitajInt("Unesi fotografiju za brisanje: ") - 1);
             IzbornikRadSFotografijama();
+        }
+
+
+        private Djelatnik PostaviDjelatnika()
+        {
+            PrikaziSveDjelatnike();
+            int Index = Pomocno.UcitajBrojRaspon("Odaberi redni broj djelatnika: ", "Nije dobar odabir", 1, Djelatnici.Count());
+            return Djelatnici[Index-1];
         }
     }
 }

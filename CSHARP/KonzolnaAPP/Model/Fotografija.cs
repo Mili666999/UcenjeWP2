@@ -14,7 +14,7 @@ namespace KonzolnaAPP.Model
 
         public override string ToString()
         {
-            return Naziv;
+            return Naziv + " - " + Djelatnik;
         }
     }
 }
