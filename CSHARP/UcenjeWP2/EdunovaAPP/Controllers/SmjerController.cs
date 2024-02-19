@@ -35,7 +35,7 @@ namespace EdunovaAPP.Controllers
         ///     
         /// </remarks>
         /// <returns>Smjerovi u bazi</returns>
-        /// <response code="200">Sve OK</response>
+        /// <response code="200">Sve OK, ako nema podataka: contetn-length 0</response>
         /// <response code="400">Zahtjev nije valjan</response>
         /// <response code="503">Baza na koju se spajam nije dostupna</response>
         [HttpGet]
