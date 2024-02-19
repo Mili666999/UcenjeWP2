@@ -9,8 +9,8 @@ namespace EdunovaAPP.Models
     public abstract class Entitet
     {
         /// <summary>
-        /// Ovo svojstvo mi služa kao primarni ključ u bazi
-        /// s generiranjem vrijednosti identiti(1,1)
+        /// Ovo svojstvo mi služi kao primarni ključ u bazi
+        /// s generiranjem vrijednosti identity(1,1)
         /// </summary>
         [Key]
         public int Sifra { get; set; }
