@@ -1,3 +1,5 @@
+using DjelatniciAPP.Data;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,13 +37,23 @@ builder.Services.AddSwaggerGen(sgo =>
 });
 
 
+//Dodavanje baze podataka
+builder.Services.AddDbContext<DjelatniciContext>(o =>
+    o.UseSqlServer(builder.Configuration.GetConnectionString(name: "DjelatniciContext"))
+);
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+//Mogućnost generiranja poziva rute u CMD i Powershell
+    app.UseSwaggerUI(opcije =>
+    {
+        opcije.ConfigObject.AdditionalItems.Add("requestSnippetsEnabled", true);
+    });
 }
 
 app.UseHttpsRedirection();
